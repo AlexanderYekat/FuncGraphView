@@ -8,7 +8,7 @@ https://github.com/user-attachments/assets/31014ce9-732d-4473-b813-52790e0bbf4c
 
 Граф из всех общих модулей БСП
 
-[browser_DpZL9H33QD.mp4](doc%2Fbrowser_DpZL9H33QD.mp4)
+https://github.com/user-attachments/assets/d605ac8b-4cd2-4148-8c01-4cdbf36626e7
 
 Фронтовая часть реализована на основе [InteractiveGraph](https://github.com/grapheco/InteractiveGraph)
 
