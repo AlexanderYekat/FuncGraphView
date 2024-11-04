@@ -2,10 +2,9 @@
 Интерактивный граф связей функций (процедур) bsl
 
 ---
-Граф из 40 модулей БСП
+Граф из некоторых модулей БСП
 
-https://github.com/user-attachments/assets/31014ce9-732d-4473-b813-52790e0bbf4c
-
+https://github.com/user-attachments/assets/1e126498-6b80-4032-9fe0-de471ddb9e89
 
 
 ---
