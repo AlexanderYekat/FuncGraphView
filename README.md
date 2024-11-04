@@ -3,9 +3,7 @@
 
 Граф из 40 модулей БСП
 
-[browser_dIWALvw5hx.mp4](doc%2Fbrowser_dIWALvw5hx.mp4)
-
-
+https://github.com/user-attachments/assets/31014ce9-732d-4473-b813-52790e0bbf4c
 
 
 Граф из всех общих модулей БСП
