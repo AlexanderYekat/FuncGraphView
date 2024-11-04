@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/1e126498-6b80-4032-9fe0-de471ddb9e89
 
 Граф из всех общих модулей БСП
 
-https://github.com/user-attachments/assets/d605ac8b-4cd2-4148-8c01-4cdbf36626e7
+![browser_8z9gQv6MUF](https://github.com/user-attachments/assets/321806df-db03-43b0-b049-b7f88bc0984e)
 
 ---
 
