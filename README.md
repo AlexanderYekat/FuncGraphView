@@ -5,7 +5,8 @@
 Граф из некоторых модулей БСП
 
 https://github.com/user-attachments/assets/1e126498-6b80-4032-9fe0-de471ddb9e89
-
+---
+https://github.com/user-attachments/assets/3de6a829-7b62-4f22-afb1-270efd68561d
 
 ---
 
