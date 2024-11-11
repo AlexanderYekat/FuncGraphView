@@ -130,6 +130,7 @@ func buildNodes(trees []*ast.AstNode) *loadGraphResp {
 
 	type funcInfo struct {
 		stCount    int
+		inRefCount int
 		id         int
 		dependence []string
 		export     bool
@@ -192,8 +193,15 @@ func buildNodes(trees []*ast.AstNode) *loadGraphResp {
 			})
 
 			to.notUse = false
+			to.inRefCount++
 			edgesID++
+
 			pf[d] = to
+		}
+
+		//result.Nodes[len(result.Nodes)-1].Value = v.inRefCount
+		if v.inRefCount > 0 {
+			result.Nodes[len(result.Nodes)-1].Value *= v.inRefCount
 		}
 	}
 
