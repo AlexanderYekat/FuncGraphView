@@ -48,3 +48,21 @@ type params struct {
 type nodesInfoResp struct {
 	Infos []string `json:"infos"`
 }
+
+type Node3D struct {
+	Id          string `json:"id"`
+	Group       int    `json:"group"`
+	Description string `json:"description"`
+	Value       int    `json:"val"`
+}
+
+type Edges3D struct {
+	Source string `json:"source"`
+	Target string `json:"target"`
+	Value  int    `json:"value"`
+}
+
+type Graph3DResp struct {
+	Nodes []Node3D  `json:"nodes"`
+	Links []Edges3D `json:"links"`
+}

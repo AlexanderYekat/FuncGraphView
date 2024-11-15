@@ -1,6 +1,9 @@
 # FuncGraphView
 Интерактивный граф связей функций (процедур) bsl
 
+![4J9Pd8c80M](https://github.com/user-attachments/assets/377b6dd9-3b2b-40dd-a5c3-56c611ae2dda)
+
+
 ---
 Граф из некоторых модулей БСП
 
@@ -18,7 +21,13 @@ https://github.com/user-attachments/assets/3de6a829-7b62-4f22-afb1-270efd68561d
 
 ---
 
-Фронтовая часть реализована на основе [InteractiveGraph](https://github.com/grapheco/InteractiveGraph).
-Пример фронта [тут](https://github.com/grapheco/InteractiveGraph/tree/master/dist/examples)
+3D граф
+
+https://github.com/user-attachments/assets/05aeeee7-d8b3-4771-abcd-d55b7e21f2c7
+
+---
+
+Фронтовая часть [InteractiveGraph](https://github.com/grapheco/InteractiveGraph) (пример можно посмотреть [тут](https://github.com/grapheco/InteractiveGraph/tree/master/dist/examples)) и [3d-force-graph](https://github.com/vasturiano/3d-force-graph)
+
 
 Бэк реализован с использованием [1c-language-parser]( https://github.com/LazarenkoA/1c-language-parser)

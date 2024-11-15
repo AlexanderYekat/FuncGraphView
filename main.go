@@ -8,11 +8,13 @@ import (
 	"github.com/pkg/errors"
 	"github.com/rs/cors"
 	"github.com/samber/lo"
+	"hash/fnv"
 	"io"
 	"math"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -30,6 +32,7 @@ func main() {
 	}
 
 	nodes := buildNodes(trees)
+	nodesFor3D := buildNodesFor3D(trees)
 
 	// http://localhost:8080/graphserver
 	mux := http.NewServeMux()
@@ -50,6 +53,15 @@ func main() {
 		if data, err := invokeIGPCommand(command, nodes, &param); err == nil {
 			w.Write(data)
 		}
+	})
+	mux.HandleFunc("/json", func(w http.ResponseWriter, r *http.Request) {
+		data, _ := json.Marshal(&nodesFor3D)
+		w.Write(data)
+	})
+
+	//mux.Handle("/", http.FileServer(http.Dir("./")))
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "index3D.html")
 	})
 
 	handler := cors.Default().Handler(mux)
@@ -123,6 +135,29 @@ func parseFile(filePath string) (*ast.AstNode, error) {
 	}
 
 	return ast, nil
+}
+
+func buildNodesFor3D(trees []*ast.AstNode) *Graph3DResp {
+	nodes := buildNodes(trees)
+	result := new(Graph3DResp)
+
+	for _, n := range nodes.Nodes {
+		result.Nodes = append(result.Nodes, Node3D{
+			Id:          strconv.Itoa(n.Id),
+			Group:       int(HashStringToInt(n.Group)),
+			Description: n.Label,
+			Value:       n.Value,
+		})
+	}
+
+	for _, e := range nodes.Edges {
+		result.Links = append(result.Links, Edges3D{
+			Source: strconv.Itoa(e.From),
+			Target: strconv.Itoa(e.To),
+		})
+	}
+
+	return result
 }
 
 func buildNodes(trees []*ast.AstNode) *loadGraphResp {
@@ -254,4 +289,10 @@ func walkDir(rootPath string) ([]*ast.AstNode, error) {
 	})
 
 	return result, err
+}
+
+func HashStringToInt(s string) uint64 {
+	h := fnv.New64a() // Используем FNV-1a 64-битный хешер
+	h.Write([]byte(s))
+	return h.Sum64() // Возвращаем хеш в виде uint64
 }
