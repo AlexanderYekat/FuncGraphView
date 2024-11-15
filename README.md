@@ -23,7 +23,8 @@ https://github.com/user-attachments/assets/3de6a829-7b62-4f22-afb1-270efd68561d
 
 3D граф
 
-https://github.com/user-attachments/assets/05aeeee7-d8b3-4771-abcd-d55b7e21f2c7
+https://github.com/user-attachments/assets/321b0331-e648-4743-947b-e6a81a9f27a6
+
 
 ---
 
