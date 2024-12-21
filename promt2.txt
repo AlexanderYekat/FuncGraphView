@@ -1,0 +1,905 @@
+****terminal output*************
+
+=== Starting application ===
+Working directory: ./TestCommonModules
+
+Scanning directory: ./TestCommonModules
+Processing file: TestCommonModules\МодульA\Ext\Module.bsl
+  Parsing file: TestCommonModules\МодульA\Ext\Module.bsl
+  File size: 457 bytes
+  AST created, starting parse
+  Parse completed successfully
+Successfully parsed: TestCommonModules\МодульA\Ext\Module.bsl
+Processing file: TestCommonModules\МодульB\Ext\Module.bsl
+  Parsing file: TestCommonModules\МодульB\Ext\Module.bsl
+  File size: 1250 bytes
+  AST created, starting parse
+  Parse completed successfully
+Successfully parsed: TestCommonModules\МодульB\Ext\Module.bsl
+Found 2 files to parse
+Walk ModuleStatement МодульA
+StatementWalk: 2
+walkHelper: 2
+FunctionOrProcedure
+walkHelper: 1
+ReturnStatement
+walkHelper: 1
+ExpStatement
+walkHelper: 1
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} {Число2 {false false false}}
+walkHelper: 1
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} {Число1 {false false false}}
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} &{{Число1 {false false false}} {Число2 {false false false}} + {false false false}}
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} &{0x2346498}
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false}
+FunctionOrProcedure
+walkHelper: 2
+ExpStatement
+walkHelper: 1
+MethodStatement
+walkHelper: 2
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {Сумма1 {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {Сумма2 {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {ПолучитьСумму [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}}
+walkHelper: 1
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {рез {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} &{{рез {false false false}} {ПолучитьСумму [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}} = {false false false}}
+ReturnStatement
+walkHelper: 1
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {рез {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} &{{рез {false false false}}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true}
+Walk ModuleStatement МодульB
+StatementWalk: 3
+walkHelper: 3
+FunctionOrProcedure
+walkHelper: 2
+ExpStatement
+walkHelper: 1
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {ОписаниеОповещения [ПослеВыполненияРасчета {ЭтотОбъект {false false false}}]}
+walkHelper: 1
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {ОповещенияПослеРачсета {false false false}}
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} &{{ОповещенияПослеРачсета {false false false}} {ОписаниеОповещения [ПослеВыполненияРасчета {ЭтотОбъект {false false false}}]} = {false false false}}
+MethodStatement
+walkHelper: 3
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {ОповещенияПослеРачсета {false false false}}
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} 20
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} 30
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false}
+FunctionOrProcedure
+walkHelper: 2
+ExpStatement
+walkHelper: 1
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} {{ВыполнитьРасчетНаСервере [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}} {МодульА {false false false}} {false false false}}
+walkHelper: 1
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} {рез {false false false}}
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} &{{рез {false false false}} {{ВыполнитьРасчетНаСервере [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}} {МодульА {false false false}} {false false false}} = {false false false}}
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} &{ВыполнитьОбработкуОповещения [{ОповещенияПослеРачсета {false false false}} {рез {false false false}}]}
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false}
+FunctionOrProcedure
+walkHelper: 1
+MethodStatement
+walkHelper: 1
+ExpStatement
+walkHelper: 1
+MethodStatement
+walkHelper: 1
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} {Резульат {false false false}}
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} {СокрЛП [{Резульат {false false false}}] {false false false}}
+walkHelper: 1
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} Результат расчета=
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} &{Результат расчета= {СокрЛП [{Резульат {false false false}}] {false false false}} + {false false false}}
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} {Сообщить [0x2346600] {false false false}}
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true}
+Built 5 nodes with 2 edges
+Walk ModuleStatement МодульA
+StatementWalk: 2
+walkHelper: 2
+FunctionOrProcedure
+walkHelper: 1
+ReturnStatement
+walkHelper: 1
+ExpStatement
+walkHelper: 1
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} {Число2 {false false false}}
+walkHelper: 1
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} {Число1 {false false false}}
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} &{{Число1 {false false false}} {Число2 {false false false}} + {false false false}}
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} &{0x2346498}
+callBack &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false} &{map[] ПолучитьСумму &НаСервере [0x2364008] [{<nil> Число1 false} {<nil> Число2 false}] 2 false}
+FunctionOrProcedure
+walkHelper: 2
+ExpStatement
+walkHelper: 1
+MethodStatement
+walkHelper: 2
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {Сумма1 {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {Сумма2 {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {ПолучитьСумму [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}}
+walkHelper: 1
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {рез {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} &{{рез {false false false}} {ПолучитьСумму [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}} = {false false false}}
+ReturnStatement
+walkHelper: 1
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} {рез {false false false}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} &{{рез {false false false}}}
+callBack &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true} &{map[] ВыполнитьРасчетНаСервере &НаСервере [0x23464e0 0x2364030] [{<nil> Сумма1 false} {<nil> Сумма2 false}] 2 true}
+Walk ModuleStatement МодульB
+StatementWalk: 3
+walkHelper: 3
+FunctionOrProcedure
+walkHelper: 2
+ExpStatement
+walkHelper: 1
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {ОписаниеОповещения [ПослеВыполненияРасчета {ЭтотОбъект {false false false}}]}
+walkHelper: 1
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {ОповещенияПослеРачсета {false false false}}
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} &{{ОповещенияПослеРачсета {false false false}} {ОписаниеОповещения [ПослеВыполненияРасчета {ЭтотОбъект {false false false}}]} = {false false false}}
+MethodStatement
+walkHelper: 3
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {ОповещенияПослеРачсета {false false false}}
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} 20
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} 30
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}
+callBack &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false} &{map[] КомандаВыполнитьКоманду &НаКлиенте [0x2346528 {НачатьВыполнениеКоманды [{ОповещенияПослеРачсета {false false false}} 20 30] {false false false}}] [{<nil> Команда false}] 1 false}
+FunctionOrProcedure
+walkHelper: 2
+ExpStatement
+walkHelper: 1
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} {{ВыполнитьРасчетНаСервере [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}} {МодульА {false false false}} {false false false}}
+walkHelper: 1
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} {рез {false false false}}
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} &{{рез {false false false}} {{ВыполнитьРасчетНаСервере [{Сумма1 {false false false}} {Сумма2 {false false false}}] {false false false}} {МодульА {false false false}} {false false false}} = {false false false}}
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} &{ВыполнитьОбработкуОповещения [{ОповещенияПослеРачсета {false false false}} {рез {false false false}}]}
+callBack &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false} &{map[] НачатьВыполнениеКоманды &НаКлиенте [0x23465a0 0x23465b8] [{<nil> ОповещенияПослеРачсета false} {<nil> Сумма1 false} {<nil> Сумма2 false}] 1 false}
+FunctionOrProcedure
+walkHelper: 1
+MethodStatement
+walkHelper: 1
+ExpStatement
+walkHelper: 1
+MethodStatement
+walkHelper: 1
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} {Резульат {false false false}}
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} {СокрЛП [{Резульат {false false false}}] {false false false}}
+walkHelper: 1
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} Результат расчета=
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} &{Результат расчета= {СокрЛП [{Резульат {false false false}}] {false false false}} + {false false false}}
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} {Сообщить [0x2346600] {false false false}}
+callBack &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true} &{map[] ПослеВыполненияРасчета &НаКлиенте [{Сообщить [0x2346600] {false false false}}] [{<nil> Резульат false} {<nil> Параметры false}] 1 true}
+Built 3D graph with 5 nodes and 2 links
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+
+****ast_struct.go*************
+package ast
+
+import "fmt"
+
+type StatementType int
+type OperationType int
+
+const (
+	PFTypeUndefined StatementType = iota
+	PFTypeProcedure
+	PFTypeFunction
+)
+
+const (
+	OpPlus OperationType = iota
+	OpMinus
+	OpMul
+	OpDiv
+	OpEq  // =
+	OpGt  // >
+	OpLt  // <
+	OpNe  // <>
+	OpLe  // <=
+	OpGe  // >=
+	OpMod // % - деление по модулю
+	OpOr
+	OpAnd
+)
+
+type IUnary interface {
+	UnaryMinus() interface{}
+}
+
+type INot interface {
+	Not() interface{}
+}
+
+type IParams interface {
+	Params() []Statement
+}
+
+type Statement interface{}
+
+type GlobalVariables struct {
+	Directive string
+	Var       VarStatement
+	Export    bool
+}
+
+type ModuleStatement struct {
+	Name            string
+	GlobalVariables map[string]GlobalVariables `json:"GlobalVariables,omitempty"`
+	Body            []Statement
+}
+
+type VarStatement struct {
+	Name string
+	addStatementField
+}
+
+type FunctionOrProcedure struct {
+	ExplicitVariables map[string]VarStatement
+	Name              string
+	Directive         string
+	Body              []Statement
+	Params            []ParamStatement
+	Type              StatementType
+	Export            bool
+}
+
+type ParamStatement struct {
+	Default Statement `json:"Default,omitempty"`
+	Name    string
+	IsValue bool `json:"IsValue,omitempty"`
+}
+
+type addStatementField struct {
+	unaryMinus bool
+	unaryPlus  bool
+	not        bool
+}
+
+type ExpStatement struct {
+	Left      interface{}
+	Right     interface{}
+	Operation OperationType
+	addStatementField
+}
+
+// type IfElseStatement struct {
+// 	Expression Statement
+// 	TrueBlock  []Statement
+// }
+
+type IfStatement struct {
+	Expression  Statement
+	TrueBlock   []Statement
+	IfElseBlock []Statement
+	ElseBlock   []Statement
+}
+
+type TryStatement struct {
+	Body  []Statement
+	Catch []Statement
+}
+
+type ThrowStatement struct {
+	Param Statement
+}
+
+type UndefinedStatement struct{}
+
+type ReturnStatement struct {
+	Param Statement
+}
+
+type NewObjectStatement struct {
+	Constructor string
+	Param       []Statement
+}
+
+type CallChainStatement struct {
+	Unit Statement
+	Call Statement
+	addStatementField
+}
+
+type MethodStatement struct {
+	Name  string
+	Param []Statement
+	addStatementField
+}
+
+type BreakStatement struct {
+}
+
+type ContinueStatement struct {
+}
+
+type LoopStatement struct {
+	For       Statement `json:"For,omitempty"`
+	To        Statement `json:"To,omitempty"`
+	In        Statement `json:"In,omitempty"`
+	WhileExpr Statement `json:"WhileExpr,omitempty"`
+	Body      []Statement
+}
+
+type TernaryStatement struct {
+	Expression Statement
+	TrueBlock  Statement
+	ElseBlock  Statement
+}
+
+type ItemStatement struct {
+	Item   Statement
+	Object Statement
+}
+
+type GoToStatement struct {
+	Label *GoToLabelStatement
+}
+
+type GoToLabelStatement struct {
+	Name string
+}
+
+type BuiltinFunctionStatement struct {
+	Name  string
+	Param []Statement
+}
+
+func (p *ParamStatement) Fill(valueParam *Token, identifier Token) *ParamStatement {
+	p.IsValue = valueParam != nil
+	p.Name = identifier.literal
+	return p
+}
+
+func (p *ParamStatement) DefaultValue(value Statement) *ParamStatement {
+	if value == nil {
+		p.Default = UndefinedStatement{}
+	} else {
+		p.Default = value
+	}
+
+	return p
+}
+
+func (e *ExpStatement) UnaryMinus() interface{} {
+	e.unaryMinus = true
+	return e
+}
+
+func (e *ExpStatement) Not() interface{} {
+	e.not = true
+	return e
+}
+
+func (e VarStatement) UnaryMinus() interface{} {
+	e.unaryMinus = true
+	return e
+}
+
+func (e VarStatement) Not() interface{} {
+	e.not = true
+	return e
+}
+
+func (e CallChainStatement) UnaryMinus() interface{} {
+	e.unaryMinus = true
+	return e
+}
+
+func (e CallChainStatement) Not() interface{} {
+	e.not = true
+	return e
+}
+
+// IsMethod вернет true в случаях Блокировка.Заблокировать() и false для Источник.Ссылка
+func (e CallChainStatement) IsMethod() bool {
+	_, ok := e.Unit.(MethodStatement)
+	return ok
+}
+
+func (e MethodStatement) Not() interface{} {
+	e.not = true
+	return e
+}
+
+func (n NewObjectStatement) Params() []Statement {
+	return n.Param
+}
+
+func (n MethodStatement) Params() []Statement {
+	return n.Param
+}
+
+func (o OperationType) String() string {
+	switch o {
+	case OpPlus:
+		return "+"
+	case OpMinus:
+		return "-"
+	case OpMul:
+		return "*"
+	case OpDiv:
+		return "/"
+	case OpEq:
+		return "="
+	case OpGt:
+		return ">"
+	case OpLt:
+		return "<"
+	case OpNe:
+		return "<>"
+	case OpLe:
+		return "<="
+	case OpGe:
+		return ">="
+	case OpMod:
+		return "%"
+	case OpOr:
+		return "ИЛИ"
+	case OpAnd:
+		return "И"
+	default:
+		return ""
+	}
+}
+
+func (m ModuleStatement) Walk(callBack func(current *FunctionOrProcedure, statement *Statement)) {
+	fmt.Println("Walk ModuleStatement", m.Name)
+	StatementWalk(m.Body, callBack)
+}
+
+func StatementWalk(stm []Statement, callBack func(current *FunctionOrProcedure, statement *Statement)) {
+	fmt.Println("StatementWalk:", len(stm))
+	walkHelper(nil, stm, callBack)
+}
+
+func (m *ModuleStatement) Append(item Statement, yylex yyLexer) {
+	switch v := item.(type) {
+	case GlobalVariables:
+		if len(m.Body) > 0 {
+			yylex.Error("variable declarations must be placed at the beginning of the module")
+			return
+		}
+
+		if m.GlobalVariables == nil {
+			m.GlobalVariables = map[string]GlobalVariables{}
+		}
+
+		if _, ok := m.GlobalVariables[v.Var.Name]; ok {
+			yylex.Error(fmt.Sprintf("%v: with the specified name %q", errVariableAlreadyDefined, v.Var.Name))
+		} else {
+			m.GlobalVariables[v.Var.Name] = v
+		}
+	case []GlobalVariables:
+		for _, item := range v {
+			m.Append(item, yylex)
+		}
+	case []Statement:
+		m.Body = append(m.Body, v...)
+	case *FunctionOrProcedure:
+		// если предыдущее выражение не процедура функция, то это значит что какой-то умник вначале или в середине модуля вставил какие-то выражения, а это нельзя. 1С разрешает выражения только в конце модуля
+		if len(m.Body) > 0 {
+			if _, ok := m.Body[len(m.Body)-1].(*FunctionOrProcedure); !ok {
+				yylex.Error("procedure and function definitions should be placed before the module body statements")
+				return
+			}
+		}
+
+		m.Body = append(m.Body, item)
+	default:
+		m.Body = append(m.Body, item)
+	}
+}
+
+// func (m Statements) Walk(callBack func(statement *Statement)) {
+// 	walkHelper(m, callBack)
+// }
+
+func walkHelper(parent *FunctionOrProcedure, statements []Statement, callBack func(current *FunctionOrProcedure, statement *Statement)) {
+	fmt.Println("walkHelper:", len(statements))
+	for i, item := range statements {
+		switch v := item.(type) {
+		case *IfStatement:
+			fmt.Println("IfStatement", v.Expression)
+			walkHelper(parent, []Statement{v.Expression}, callBack)
+			walkHelper(parent, v.TrueBlock, callBack)
+			walkHelper(parent, v.ElseBlock, callBack)
+			walkHelper(parent, v.IfElseBlock, callBack)
+		case TryStatement:
+			fmt.Println("TryStatement")
+			walkHelper(parent, v.Body, callBack)
+			walkHelper(parent, v.Catch, callBack)
+		case *LoopStatement:
+			fmt.Println("LoopStatement")
+			walkHelper(parent, v.Body, callBack)
+		case *FunctionOrProcedure:
+			fmt.Println("FunctionOrProcedure")
+			walkHelper(v, v.Body, callBack)
+			parent = v
+		case MethodStatement:
+			fmt.Println("MethodStatement")
+			walkHelper(parent, v.Param, callBack)
+		//case CallChainStatement:
+		//	walkHelper(parent, []Statement{v.Unit}, callBack)
+		case *ExpStatement:
+			fmt.Println("ExpStatement")
+			walkHelper(parent, []Statement{v.Right}, callBack)
+			walkHelper(parent, []Statement{v.Left}, callBack)
+		case TernaryStatement:
+			fmt.Println("TernaryStatement")
+			walkHelper(parent, []Statement{v.Expression}, callBack)
+			walkHelper(parent, []Statement{v.TrueBlock}, callBack)
+			walkHelper(parent, []Statement{v.ElseBlock}, callBack)
+		case *ReturnStatement:
+			fmt.Println("ReturnStatement")
+			walkHelper(parent, []Statement{v.Param}, callBack)
+		case BuiltinFunctionStatement:
+			fmt.Println("BuiltinFunctionStatement", v.Name, len(v.Param))
+			walkHelper(parent, v.Param, callBack)
+		}
+		fmt.Println("callBack", parent, statements[i])
+		callBack(parent, &statements[i])
+	}
+}
+
+
+****main.go*************
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io"
+	"math"
+	"net/http"
+	"os"
+	"path/filepath"
+	"strconv"
+	"strings"
+
+	"hash/fnv"
+
+	"github.com/LazarenkoA/1c-language-parser/ast"
+	"github.com/gin-gonic/gin"
+	"github.com/samber/lo"
+)
+
+var (
+	utf8BOM = []byte{0xEF, 0xBB, 0xBF}
+)
+
+const rootPath = "./TestCommonModules"
+
+func main() {
+	fmt.Println("=== Starting application ===")
+	fmt.Printf("Working directory: %s\n", rootPath)
+
+	trees, err := walkDir(rootPath)
+	fmt.Printf("Found %d files to parse\n", len(trees))
+	if err != nil {
+		fmt.Printf("Error walking directory: %v\n", err)
+		return
+	}
+
+	nodes := buildNodes(trees)
+	fmt.Printf("Built %d nodes with %d edges\n", len(nodes.Nodes), len(nodes.Edges))
+
+	nodesFor3D := buildNodesFor3D(trees)
+	fmt.Printf("Built 3D graph with %d nodes and %d links\n",
+		len(nodesFor3D.Nodes), len(nodesFor3D.Links))
+
+	r := gin.Default()
+	fmt.Println("=== Server configuration ===")
+	fmt.Println("Setting up routes:")
+	fmt.Println("- GET /graphserver")
+	fmt.Println("- GET /json")
+	fmt.Println("- GET /")
+
+	// CORS middleware
+	r.Use(func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+		c.Next()
+	})
+
+	r.GET("/graphserver", func(c *gin.Context) {
+		command := c.Query("command")
+		if command == "" {
+			c.Status(http.StatusBadRequest)
+			return
+		}
+
+		var param params
+		if err := c.ShouldBindJSON(&param); err != nil {
+			// Игнорируем ошибку, так как параметры могут быть пустыми
+		}
+
+		if data, err := invokeIGPCommand(command, nodes, &param); err == nil {
+			c.Data(http.StatusOK, "application/json", data)
+		} else {
+			c.Status(http.StatusInternalServerError)
+		}
+	})
+
+	r.GET("/json", func(c *gin.Context) {
+		c.JSON(http.StatusOK, nodesFor3D)
+	})
+
+	r.GET("/", func(c *gin.Context) {
+		c.File("index3D.html")
+	})
+
+	fmt.Println("=== Server started at :8080 ===")
+	r.Run(":8080")
+}
+
+func invokeIGPCommand(command string, graph *loadGraphResp, param *params) ([]byte, error) {
+	switch strings.ToLower(command) {
+	case "init":
+		resp := initResp{
+			EdgesCount:  len(graph.Edges),
+			NodesCount:  len(graph.Nodes),
+			Product:     "Go Demo",
+			Categories:  map[string]string{"notuse": "не используемые"},
+			BackendType: BackendTypeGSON,
+		}
+
+		return json.Marshal(&resp)
+	case "loadgraph":
+		return json.Marshal(graph)
+	case "search":
+		filtered := lo.Filter(graph.Nodes, func(item Node, index int) bool {
+			return item.Label == param.Expr
+		})
+
+		limit := int(math.Min(float64(param.Limit), float64(len(filtered))))
+		resp := loadGraphResp{Nodes: filtered[:limit]}
+		return json.Marshal(&resp)
+	case "getnodesinfo":
+		resp := nodesInfoResp{
+			Infos: []string{},
+		}
+
+		filtered := lo.Filter(graph.Nodes, func(item Node, index int) bool {
+			return lo.Some(param.NodeIds, []int{item.Id})
+		})
+
+		for _, n := range filtered {
+			resp.Infos = append(resp.Infos, fmt.Sprintf("<div style=\"word-wrap: break-word; padding: 10px;\"><p>%s</p></div>", n.Label))
+		}
+
+		return json.Marshal(&resp)
+	}
+
+	return nil, nil
+}
+
+func parseFile(filePath string) (*ast.AstNode, error) {
+	fmt.Printf("  Parsing file: %s\n", filePath)
+
+	f, err := os.Open(filePath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to open file: %v", err)
+	}
+	defer f.Close()
+
+	data, _ := io.ReadAll(f)
+	fmt.Printf("  File size: %d bytes\n", len(data))
+
+	if bytes.HasPrefix(data, utf8BOM) {
+		data = data[len(utf8BOM):]
+		fmt.Println("  BOM detected and removed")
+	}
+
+	ast := ast.NewAST(string(data))
+	fmt.Println("  AST created, starting parse")
+
+	if err := ast.Parse(); err != nil {
+		return nil, fmt.Errorf("parse error: %v", err)
+	}
+	fmt.Println("  Parse completed successfully")
+
+	s := strings.Split(filePath, string(os.PathSeparator))
+	if len(s) < 3 {
+		fmt.Printf("bad file path %s", filePath)
+	} else {
+		ast.ModuleStatement.Name = s[len(s)-3]
+	}
+
+	return ast, nil
+}
+
+func buildNodesFor3D(trees []*ast.AstNode) *Graph3DResp {
+	nodes := buildNodes(trees)
+	result := new(Graph3DResp)
+
+	for _, n := range nodes.Nodes {
+		result.Nodes = append(result.Nodes, Node3D{
+			Id:          strconv.Itoa(n.Id),
+			Group:       int(HashStringToInt(n.Group)),
+			Description: n.Label,
+			Value:       n.Value,
+		})
+	}
+
+	for _, e := range nodes.Edges {
+		result.Links = append(result.Links, Edges3D{
+			Source: strconv.Itoa(e.From),
+			Target: strconv.Itoa(e.To),
+		})
+	}
+
+	return result
+}
+
+func buildNodes(trees []*ast.AstNode) *loadGraphResp {
+	result := new(loadGraphResp)
+
+	type funcInfo struct {
+		stCount    int
+		inRefCount int
+		id         int
+		dependence []string
+		export     bool
+		moduleName string
+		notUse     bool
+	}
+
+	pf := map[string]funcInfo{}
+
+	for _, m := range trees {
+		m.ModuleStatement.Walk(func(currentFP *ast.FunctionOrProcedure, statement *ast.Statement) {
+			if currentFP == nil {
+				return
+			}
+
+			key := m.ModuleStatement.Name + "." + currentFP.Name
+			if _, ok := pf[key]; !ok {
+				pf[key] = funcInfo{id: len(pf), export: currentFP.Export, notUse: true, moduleName: m.ModuleStatement.Name}
+			}
+
+			v := pf[key]
+
+			switch value := (*statement).(type) {
+			case ast.MethodStatement:
+				v.dependence = lo.Union(v.dependence, []string{m.ModuleStatement.Name + "." + value.Name})
+			case ast.CallChainStatement:
+				if value.IsMethod() {
+					v.dependence = append(v.dependence, printCallChainStatement(value))
+				}
+			}
+
+			if f, ok := (*statement).(*ast.FunctionOrProcedure); ok {
+				v.stCount = len(f.Body) + 1
+			}
+
+			pf[key] = v
+		})
+
+	}
+
+	var edgesID int
+	for name, v := range pf {
+		result.Nodes = append(result.Nodes, Node{
+			Label: name,
+			Id:    v.id,
+			Value: v.stCount,
+			Group: v.moduleName, //fmt.Sprintf("%v", v.export),
+		})
+
+		for _, d := range v.dependence {
+			to, ok := pf[d]
+			if !ok {
+				continue
+			}
+
+			result.Edges = append(result.Edges, Edge{
+				Id:   edgesID,
+				From: v.id,
+				To:   to.id,
+			})
+
+			to.notUse = false
+			to.inRefCount++
+			edgesID++
+
+			pf[d] = to
+		}
+
+		//result.Nodes[len(result.Nodes)-1].Value = v.inRefCount
+		if v.inRefCount > 0 {
+			result.Nodes[len(result.Nodes)-1].Value *= v.inRefCount
+		}
+	}
+
+	for i, n := range result.Nodes {
+		if pf[n.Label].notUse {
+			result.Nodes[i].Categories = append(result.Nodes[i].Categories, "notuse")
+		}
+	}
+
+	return result
+}
+
+func printCallChainStatement(call ast.Statement) (result string) {
+	switch v := call.(type) {
+	case ast.CallChainStatement:
+		if v.Call != nil {
+			return printCallChainStatement(v.Call) + "." + printCallChainStatement(v.Unit)
+		}
+	case ast.VarStatement:
+		return v.Name
+	case ast.MethodStatement:
+		return v.Name
+	}
+
+	return
+}
+
+func walkDir(rootPath string) ([]*ast.AstNode, error) {
+	fmt.Printf("\nScanning directory: %s\n", rootPath)
+	result := make([]*ast.AstNode, 0)
+
+	err := filepath.WalkDir(rootPath, func(path string, d os.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if !d.IsDir() && filepath.Ext(path) == ".bsl" {
+			fmt.Printf("Processing file: %s\n", path)
+			a, err := parseFile(path)
+			if err != nil {
+				fmt.Printf("Error parsing file %s: %v\n", path, err)
+				return nil
+			}
+			result = append(result, a)
+			fmt.Printf("Successfully parsed: %s\n", path)
+		}
+		return nil
+	})
+
+	return result, err
+}
+
+func HashStringToInt(s string) uint64 {
+	h := fnv.New64a() // Используем FNV-1a 64-битный хешер
+	h.Write([]byte(s))
+	return h.Sum64() // Возвращаем хеш в виде uint64
+}
+
+
+****МодульA*************
+&НаСервере
+Функция ПолучитьСумму(Число1, Число2)
+	Возврат Число1 + Число2;
+КонецФункции //
+
+&НаСервере
+Функция ВыполнитьРасчетНаСервере(Сумма1, Сумма2) экспорт
+	 рез = ПолучитьСумму(Сумма1, Сумма2);
+	 Возврат рез;
+КонецФункции //НачатьВыполнениеРасчета
+
+
+****МодульB*************
+&НаКлиенте
+Процедура КомандаВыполнитьКоманду(Команда)                                                  
+	ОповещенияПослеРачсета = Новый ОписаниеОповещения("ПослеВыполненияРасчета", ЭтотОбъект);
+	НачатьВыполнениеКоманды(ОповещенияПослеРачсета, 20, 30);
+КонецПроцедуры //КомандаВыполнитьКоманду      
+
+&НаКлиенте
+Процедура НачатьВыполнениеКоманды(ОповещенияПослеРачсета, Сумма1, Сумма2)
+	рез = МодульА.ВыполнитьРасчетНаСервере(Сумма1, Сумма2);	
+	ВыполнитьОбработкуОповещения(ОповещенияПослеРачсета, рез);
+КонецПроцедуры //КомандаВыполнитьКомандуНаСервере
+
+&НаКлиенте
+Процедура ПослеВыполненияРасчета(Резульат, Параметры) экспорт
+	Сообщить("Результат расчета="+СокрЛП(Резульат));
+конецПроцедуры //

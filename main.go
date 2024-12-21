@@ -16,7 +16,6 @@ import (
 
 	"github.com/LazarenkoA/1c-language-parser/ast"
 	"github.com/gin-gonic/gin"
-	"github.com/pkg/errors"
 	"github.com/samber/lo"
 )
 
@@ -27,16 +26,29 @@ var (
 const rootPath = "./TestCommonModules"
 
 func main() {
+	fmt.Println("=== Starting application ===")
+	fmt.Printf("Working directory: %s\n", rootPath)
+
 	trees, err := walkDir(rootPath)
+	fmt.Printf("Found %d files to parse\n", len(trees))
 	if err != nil {
-		fmt.Println(err)
+		fmt.Printf("Error walking directory: %v\n", err)
 		return
 	}
 
 	nodes := buildNodes(trees)
+	fmt.Printf("Built %d nodes with %d edges\n", len(nodes.Nodes), len(nodes.Edges))
+
 	nodesFor3D := buildNodesFor3D(trees)
+	fmt.Printf("Built 3D graph with %d nodes and %d links\n",
+		len(nodesFor3D.Nodes), len(nodesFor3D.Links))
 
 	r := gin.Default()
+	fmt.Println("=== Server configuration ===")
+	fmt.Println("Setting up routes:")
+	fmt.Println("- GET /graphserver")
+	fmt.Println("- GET /json")
+	fmt.Println("- GET /")
 
 	// CORS middleware
 	r.Use(func(c *gin.Context) {
@@ -77,7 +89,7 @@ func main() {
 		c.File("index3D.html")
 	})
 
-	fmt.Println("Server started at :8080")
+	fmt.Println("=== Server started at :8080 ===")
 	r.Run(":8080")
 }
 
@@ -123,20 +135,29 @@ func invokeIGPCommand(command string, graph *loadGraphResp, param *params) ([]by
 }
 
 func parseFile(filePath string) (*ast.AstNode, error) {
+	fmt.Printf("  Parsing file: %s\n", filePath)
+
 	f, err := os.Open(filePath)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to open file: %v", err)
 	}
+	defer f.Close()
 
 	data, _ := io.ReadAll(f)
+	fmt.Printf("  File size: %d bytes\n", len(data))
+
 	if bytes.HasPrefix(data, utf8BOM) {
-		data = data[len(utf8BOM):] // Убираем BOM
+		data = data[len(utf8BOM):]
+		fmt.Println("  BOM detected and removed")
 	}
 
 	ast := ast.NewAST(string(data))
+	fmt.Println("  AST created, starting parse")
+
 	if err := ast.Parse(); err != nil {
-		return nil, errors.Wrap(err, "parse error")
+		return nil, fmt.Errorf("parse error: %v", err)
 	}
+	fmt.Println("  Parse completed successfully")
 
 	s := strings.Split(filePath, string(os.PathSeparator))
 	if len(s) < 3 {
@@ -187,8 +208,16 @@ func buildNodes(trees []*ast.AstNode) *loadGraphResp {
 	pf := map[string]funcInfo{}
 
 	for _, m := range trees {
+		fmt.Println("ModuleStatement", m.ModuleStatement.Name)
+		fmt.Println("ModuleStatement SrsCode", m.SrsCode())
+		json, _ := m.JSON()
+		fmt.Printf("ModuleStatement JSON %v\n", string(json))
 		m.ModuleStatement.Walk(func(currentFP *ast.FunctionOrProcedure, statement *ast.Statement) {
+			fmt.Println("Walk FunctionOrProcedure", currentFP.Name)
+			fmt.Printf("Walk statement %T %v\n", *statement, *statement)
+			fmt.Println("Walk statement", statement)
 			if currentFP == nil {
+				fmt.Println("currentFP is nil")
 				return
 			}
 
@@ -201,11 +230,19 @@ func buildNodes(trees []*ast.AstNode) *loadGraphResp {
 
 			switch value := (*statement).(type) {
 			case ast.MethodStatement:
+				fmt.Println("MethodStatement", value.Name)
 				v.dependence = lo.Union(v.dependence, []string{m.ModuleStatement.Name + "." + value.Name})
 			case ast.CallChainStatement:
 				if value.IsMethod() {
+					fmt.Println("CallChainStatement", value.Call)
 					v.dependence = append(v.dependence, printCallChainStatement(value))
 				}
+			case *ast.BuiltinFunctionStatement:
+				fmt.Println("BuiltinFunctionStatement", value.Name)
+				v.dependence = append(v.dependence, value.Name)
+			default:
+				fmt.Printf("Unknown statement %T\n", *statement)
+				fmt.Println("Unknown statement", statement)
 			}
 
 			if f, ok := (*statement).(*ast.FunctionOrProcedure); ok {
@@ -276,25 +313,23 @@ func printCallChainStatement(call ast.Statement) (result string) {
 }
 
 func walkDir(rootPath string) ([]*ast.AstNode, error) {
+	fmt.Printf("\nScanning directory: %s\n", rootPath)
 	result := make([]*ast.AstNode, 0)
+
 	err := filepath.WalkDir(rootPath, func(path string, d os.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
 
-		// Проверяем, является ли это файлом или директорией
-		if !d.IsDir() {
-			if filepath.Ext(path) == ".bsl" {
-				a, err := parseFile(path)
-				if err != nil {
-					//return fmt.Errorf("%w - %s", err, path)
-
-					fmt.Println(err, path)
-					return nil
-
-				}
-				result = append(result, a)
+		if !d.IsDir() && filepath.Ext(path) == ".bsl" {
+			fmt.Printf("Processing file: %s\n", path)
+			a, err := parseFile(path)
+			if err != nil {
+				fmt.Printf("Error parsing file %s: %v\n", path, err)
+				return nil
 			}
+			result = append(result, a)
+			fmt.Printf("Successfully parsed: %s\n", path)
 		}
 		return nil
 	})
