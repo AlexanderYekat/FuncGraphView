@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"hash/fnv"
 	"io"
 	"math"
 	"net/http"
@@ -13,9 +12,11 @@ import (
 	"strconv"
 	"strings"
 
+	"hash/fnv"
+
 	"github.com/LazarenkoA/1c-language-parser/ast"
+	"github.com/gin-gonic/gin"
 	"github.com/pkg/errors"
-	"github.com/rs/cors"
 	"github.com/samber/lo"
 )
 
@@ -23,7 +24,6 @@ var (
 	utf8BOM = []byte{0xEF, 0xBB, 0xBF}
 )
 
-// const rootPath = "C:\\Users\\Артем\\Documents\\БСП_файлы\\CommonModules"
 const rootPath = "./TestCommonModules"
 
 func main() {
@@ -36,43 +36,52 @@ func main() {
 	nodes := buildNodes(trees)
 	nodesFor3D := buildNodesFor3D(trees)
 
-	// http://localhost:8080/graphserver
-	mux := http.NewServeMux()
-	mux.HandleFunc("/graphserver", func(w http.ResponseWriter, r *http.Request) {
-		command := r.FormValue("command")
+	r := gin.Default()
+
+	// CORS middleware
+	r.Use(func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization")
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+		c.Next()
+	})
+
+	r.GET("/graphserver", func(c *gin.Context) {
+		command := c.Query("command")
 		if command == "" {
+			c.Status(http.StatusBadRequest)
 			return
 		}
 
-		paramByte, _ := io.ReadAll(r.Body)
-		defer r.Body.Close()
-
 		var param params
-		if len(paramByte) > 0 {
-			json.Unmarshal(paramByte, &param)
+		if err := c.ShouldBindJSON(&param); err != nil {
+			// Игнорируем ошибку, так как параметры могут быть пустыми
 		}
 
 		if data, err := invokeIGPCommand(command, nodes, &param); err == nil {
-			w.Write(data)
+			c.Data(http.StatusOK, "application/json", data)
+		} else {
+			c.Status(http.StatusInternalServerError)
 		}
 	})
-	mux.HandleFunc("/json", func(w http.ResponseWriter, r *http.Request) {
-		data, _ := json.Marshal(&nodesFor3D)
-		w.Write(data)
+
+	r.GET("/json", func(c *gin.Context) {
+		c.JSON(http.StatusOK, nodesFor3D)
 	})
 
-	//mux.Handle("/", http.FileServer(http.Dir("./")))
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "index3D.html")
+	r.GET("/", func(c *gin.Context) {
+		c.File("index3D.html")
 	})
 
-	handler := cors.Default().Handler(mux)
-	fmt.Println("ok")
-	http.ListenAndServe(":8080", handler)
+	fmt.Println("Server started at :8080")
+	r.Run(":8080")
 }
 
 func invokeIGPCommand(command string, graph *loadGraphResp, param *params) ([]byte, error) {
-
 	switch strings.ToLower(command) {
 	case "init":
 		resp := initResp{

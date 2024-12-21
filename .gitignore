@@ -22,7 +22,6 @@ html
 # Go workspace file
 go.work
 go.work.sum
-InteractiveGraph-IGP.exe
 
 # env file
 .env
