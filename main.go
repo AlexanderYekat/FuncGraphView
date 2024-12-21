@@ -4,10 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/LazarenkoA/1c-language-parser/ast"
-	"github.com/pkg/errors"
-	"github.com/rs/cors"
-	"github.com/samber/lo"
 	"hash/fnv"
 	"io"
 	"math"
@@ -16,13 +12,19 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+
+	"github.com/LazarenkoA/1c-language-parser/ast"
+	"github.com/pkg/errors"
+	"github.com/rs/cors"
+	"github.com/samber/lo"
 )
 
 var (
 	utf8BOM = []byte{0xEF, 0xBB, 0xBF}
 )
 
-const rootPath = "C:\\Users\\Артем\\Documents\\БСП_файлы\\CommonModules"
+// const rootPath = "C:\\Users\\Артем\\Documents\\БСП_файлы\\CommonModules"
+const rootPath = "./TestCommonModules"
 
 func main() {
 	trees, err := walkDir(rootPath)
